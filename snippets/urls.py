@@ -2,11 +2,13 @@ from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from snippets import views
-from snippets.views import SnippetList, SnippetDetail
+from snippets.views import SnippetList, SnippetDetail, UserList, UserDetail
 
 urlpatterns = [
     path('snippets/', SnippetList.as_view()),
-    path('snippets/<int:pk>/', SnippetDetail.as_view())
+    path('snippets/<int:pk>/', SnippetDetail.as_view()),
+    path('users/', UserList.as_view()),
+    path('users/<int:pk>/', UserDetail.as_view())
 ]
 
 # url 뒤에 .json등 확장자 정보를 붙여 확장자를 받아올 수 있음
